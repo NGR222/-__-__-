@@ -8,15 +8,53 @@
 </head>
 <body class="page">
   
-  <a href="">
+  <div id="popup" class="popup">
+    <div class="popup__content">
+      <span id="close-popup" class="popup__close">&times;</span>
+      <p>ООО «СЗ «НДК – МОРЕ»</p>
+      <p>ИНН: 9103012773</p>
+      <p>erid: 2SDnjeHPQAp</p>
+      <p class="info">
+        ООО «СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК «НАШ ДОМ КРЫМ-МОРЕ». ПРИВЛЕЧЕНИЕ
+        ДЕНЕЖНЫХ СРЕДСТВ: СОГЛАСНО ФЕДЕРАЛЬНОМУ ЗАКОНУ Nº 214-Ф3 ОТ 30.12.2004. ПРОЕКТНАЯ ДЕКЛАРАЦИЯ НА САЙТЕ: HTTPS://НАШ.ДОМ.РФ/СЕРВИСЫ/КАТАЛОГ-НОВОСТРОЕК/ОБЪЕКТ/55913.
+      </p>
+      <p class="info">
+        *ИПОТЕКУ ПРЕДОСТАВЛЯЕТ ВТБ БАНК (ПАО). ЦЕНА УКАЗАНА НА КВАРТИРУ-СТУДИЮ, ПЛОЩАДЬ - 23,88 М², СТОИМОСТЬЮ 4 776 000 РУБЛЕЙ ,ПРИ УСЛОВИИ ПЕРВОНАЧАЛЬНОГО ВЗНОСА 20,1%. ПЕРИОД ИПОТЕЧНОГО КРЕДИТА - 30 ЛЕТ. ПРОЦЕНТНАЯ СТАВКА УКАЗАНА С УЧЕТОМ ЛЬГОТНОЙ СТАВКИ ПО СЕМЕЙНОЙ ИПОТЕКЕ.
+      </p>
+    </div>
+  </div>
+
+  <a href="https://morecrimea.ru" target="_blank">
     <article class="banner">
+      <button id="open-popup" class="popup-button">Реклама</button>
       <h1 class="title">Лови волну! <br> <span class="title-blue">в ЖК “Море”</span></h1>
-      <p class="subtitle">Комфортный платеж</p>
-      <span class="price">от 22 900 руб./мес.*</span>
+      <span class="price">Квартиры от 4,8 млн. руб.</span>
       <img class="rectangle" src="rectangle.png" alt="">
       <img class="logo" src="logo.png" alt="">
     </article>
   </a>
+
+  <script>
+    const popup = document.getElementById('popup');
+    const openPopupButton = document.getElementById('open-popup');
+    const closePopupButton = document.getElementById('close-popup');
+
+    openPopupButton.addEventListener('click', (event) => {
+    event.stopPropagation(); 
+    event.preventDefault();
+    popup.style.display = 'flex';
+    });
+
+    closePopupButton.addEventListener('click', () => {
+      popup.style.display = 'none'; 
+    });
+
+    popup.addEventListener('click', (event) => {
+       if (event.target === popup) {
+         popup.style.display = 'none';
+       }
+     });
+  </script>
 
 </body>
 </html>
